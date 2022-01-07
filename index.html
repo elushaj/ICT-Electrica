@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electrica</title>
+    <link rel="icon" href="./img/bulb-logo.png" type="image/icon type">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        *:before,
+        *:after,
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        body {
+            font-family: sans-serif;
+        }
+        
+        #map {
+            height: 730px;
+            width: 100vw;
+        }
+        
+        .map-form {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar">
+    <div class="logos">
+    <img src="img/lightbulb-on-off-gif.gif" class="logo-icon" alt="light bulb">
+    <span class="logo-name">ELECTRICA FIRM</span>
+   </div> <div class="menu">
+       <ul class="menu-items ">
+           <li class="menu-item">
+              <a href="#home"> HOME</a></li>
+           <li class="menu-item"><a href="#aboutus"> ABOUT US</a></li>
+           <li class="menu-item"><a href="#services"> SERVICES</a></li>
+           <li class="menu-item" style="color: yellow;">URGENT!</li>
+       </ul>
+    </div>
+    <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+</nav>
+
+<header id="home" >
+    <div class="header-content">
+        <div class="header-container">
+        <h1 class="header-title">   WELCOME TO ELECTRICA FIRM</h1>
+        <h3 class="header-subtitle">
+            ​At Your Service
+        </h3>
+        <p class="header-desc">
+            At Electrica Firm, your satisfaction is our main priority. Since our business started, quality has been our focus. By working with the best materials in the industry and employing the most experienced and meticulous contractors, we are able to deliver solid and long lasting solutions for everyone.
+        </p></div>
+    </div>
+</header>
+    
+<section id="aboutus">
+    <div class="aboutus-container">
+    <h1 class="aboutus-title">ABOUT US</h1>
+    <p class="aboutus-desc">
+        Electrica Firm is completely dedicated to client satisfaction. All of our team members are punctual and knowledgeable, helping make us some of the most trusted contractors in the industry. We’ve come a long way since our founding in 2000, but the leading operating values behind our services, to work with integrity in order to provide high-quality services to our clients, remain unchanged.
+
+<br><br>
+     Please get in touch with any inquiries. Be sure to include your contact information as well as any important details about your needs.
+    </p><a href="#contact">
+    <div class="svg-wrapper">
+        <svg height="60" width="320" xmlns="http://www.w3.org/2000/svg">
+          <rect class="shape" height="60" width="320" />
+          <div class="text">
+              Contact</div>
+        </svg>
+      </div>
+    </a>
+</div></section>
+
+<section id="services">
+    <div class="services-container ">
+    <div class="card"><img class="cards-img"src="img/draw.JPG" alt="" srcset=""><h1 class="service-title">Remodel</h1><hr><div class="card-container"><span class="hour">1 hr</span>
+<p class="hour-rate">$19.99</p>
+<button class="book">Book Now</button></div></div>
+<div class="card"><img class="cards-img" src="img/install.JPG" alt="" srcset=""><h1 class="service-title">Repair</h1><hr><div class="card-container"><span>1 hr</span>
+<p class="hour-rate">$19.99</p>
+<button class="book">Book Now</button></div></div>
+<div class="card"><img class="cards-img" src="img/install.JPG" alt="" srcset=""><h1 class="service-title">Install</h1><hr><div class="card-container"><span>1 hr</span>
+<p class="hour-rate">$19.99</p>
+<button class="book">Book Now</button></div></div>
+
+</div>
+
+</section>
+
+<section id="contact">
+<div class="contact-info">
+    <h1 class="contact-title">CONTACT</h1>
+    <p class="contact-desc">Brucknergasse 2, 76448 Durmersheim, Germany</p>
+    <p class="contact-desc">example@gmail.com</p>
+    <p class="contact-desc">+491631375938</p>
+</div>
+<form class="form" action="submit">
+    <input type="text" id="name" pattern="[A-Za-z]" placeholder="Name">
+    <input type="email" id="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-zA-Z]{2,4}" style="text-transform: lowercase" placeholder="Email" required>
+    <input type="tel" id="phone" pattern="/[0-9]{5,20}" placeholder="Phone" required>
+    <input type="text" id="address" placeholder="Address">
+    <input type="text" id="subject" placeholder="Subject">
+    <textarea name="area" id="area" cols="30" rows="10">Type your message here...</textarea>
+<button type="submit" class="submit-btn">Submit</button>
+</form>
+
+</section>
+<div id="map"></div>
+<footer >
+    <div class="footer">
+       
+        <span class="footer-name">ELECTRICA FIRM</span>
+        <div class="social-icons">
+          <i style="color: white !important;"   class="fa fa-facebook-f "></i>  
+          <i style="color: white !important;"  class="fa fa-twitter-square"></i>
+          <i style="color: white  !important;" class="fa fa-linkedin"></i>
+        </div>
+        <span class="copyright">&copy Electrica Firma. </span>
+
+    </div>
+</footer>
+<script>
+    function initMap() {
+        //42.661911567240736, 21.162545989865308
+        const iconURL = 'https://www.cp-desk.com/wp-content/uploads/2019/02/map-marker-free-download-png.png';
+        const icon = {
+            url: iconURL,
+           // scaledSize: new google.maps.Size(100, 100),
+            zoom:20,
+        };
+        const sheshi = {
+            lat: 48.934129185, 
+                lng:8.27333984,
+        };
+        let infowindow = new google.maps.InfoWindow();
+
+        let marker, i;
+
+        const locations = [{
+                countryCode: 'Location 1',
+                lat: 48.93409449657562,
+                lng: 8.273080073013649
+            },   
+        ]
+        const map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 19,
+            center: sheshi,
+            styles: [{
+                elementType: "geometry",
+                stylers: [{
+                    color: "#242f3e"
+                }]
+            }, {
+                elementType: "labels.text.stroke",
+                stylers: [{
+                    color: "#242f3e"
+                }]
+            }, {
+                elementType: "labels.text.fill",
+                stylers: [{
+                    color: "#746855"
+                }]
+            }, {
+                featureType: "administrative.locality",
+                elementType: "labels.text.fill",
+                stylers: [{
+                    color: "#d59563"
+                }],
+            }, {
+                featureType: "poi",
+                elementType: "labels.text.fill",
+                stylers: [{
+                    color: "#d59563"
+                }],
+            }, {
+                featureType: "poi.park",
+                elementType: "geometry",
+                stylers: [{
+                    color: "#263c3f"
+                }],
+            }, {
+                featureType: "poi.park",
+                elementType: "labels.text.fill",
+                stylers: [{
+                    color: "#6b9a76"
+                }],
+            }, {
+                featureType: "road",
+                elementType: "geometry",
+                stylers: [{
+                    color: "#38414e"
+                }],
+            }, {
+                featureType: "road",
+                elementType: "geometry.stroke",
+                stylers: [{
+                    color: "#212a37"
+                }],
+            }, {
+                featureType: "road",
+                elementType: "labels.text.fill",
+                stylers: [{
+                    color: "#9ca5b3"
+                }],
+            }, {
+                featureType: "road.highway",
+                elementType: "geometry",
+                stylers: [{
+                    color: "#746855"
+                }],
+            }, {
+                featureType: "road.highway",
+                elementType: "geometry.stroke",
+                stylers: [{
+                    color: "#1f2835"
+                }],
+            }, {
+                featureType: "road.highway",
+                elementType: "labels.text.fill",
+                stylers: [{
+                    color: "#f3d19c"
+                }],
+            }, {
+                featureType: "transit",
+                elementType: "geometry",
+                stylers: [{
+                    color: "#2f3948"
+                }],
+            }, {
+                featureType: "transit.station",
+                elementType: "labels.text.fill",
+                stylers: [{
+                    color: "#d59563"
+                }],
+            }, {
+                featureType: "water",
+                elementType: "geometry",
+                stylers: [{
+                    color: "#17263c"
+                }],
+            }, {
+                featureType: "water",
+                elementType: "labels.text.fill",
+                stylers: [{
+                    color: "#515c6d"
+                }],
+            }, {
+                featureType: "water",
+                elementType: "labels.text.stroke",
+                stylers: [{
+                    color: "#17263c"
+                }],
+            }, ]
+        })
+
+        for (i = 0; i < locations.length; i++) {
+
+            marker = new google.maps.Marker({
+                position: new google.maps.LatLng(locations[i]['lat'], locations[i]['lng']),
+                map: map,
+            });
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
+                    infowindow.setContent(locations[i]['label']);
+                    infowindow.open(map, marker);
+                }
+            })(marker, i));
+        }
+
+    }
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDs6kz4vjgFFQ9Wj84dcAiDBQXZmRynDFg&callback=initMap" type="text/javascript"></script>
+
+<script>
+    const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".menu-items");
+
+hamburger.addEventListener("click", mobileMenu);
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+</script>
+</body>
+</html>
